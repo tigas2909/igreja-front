@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+*{
+padding:0;
+margin:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+/* GRID PRINCIPAL */
+
+.bodyGen{
+
+background-color:black;
+color:greenyellow;
+
+display:grid;
+
+grid-template-areas:
+
+"header header"
+"menu main"
+"menu main"
+"footer footer";
+
+grid-template-columns:200px 1fr;
+
+grid-template-rows:100px auto auto 50px;
+
+min-height:100vh;
+
+}
+
+/* HEADER */
+
+.header{
+
+grid-area:header;
+
+display:grid;
+
+grid-template-columns:100px 1fr;
+
+align-items:center;
+
+}
+
+/* MENU */
+
+.menu-lateral{
+
+grid-area:menu;
+
+padding:10px;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+/* MAIN */
+
+main{
+
+grid-area:main;
+
+padding:20px;
+
+width:100%;
+
+}
+
+.carrossel{
+
+display:grid;
+
+grid-template-areas:
+"back atual prox";
+
+grid-template-columns:1fr 2fr 1fr;
+
+gap:20px;
+
+width:100%;
+
+align-items:center;
+
+margin-bottom: 10%;
+}
+
+/* IMAGENS */
+
+.back{
+
+grid-area:back;
+
+max-width:250px;
+
+height:200px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.atual{
+
+grid-area:atual;
+
+max-width:450px;
+
+height:300px;
+
+}
+
+.prox{
+
+grid-area:prox;
+
+max-width:250px;
+
+height:200px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.back img,
+.atual img,
+.prox img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+/* EVENTOS */
+
+.eventos{
+
+padding:20px;
+
+width:100%;
+
+max-width:800px;
+
+min-height:300px;
+
+margin:auto;
+
+}
+
+/* BOTÕES */
+
+.button{
+
+background:transparent;
+
+color:greenyellow;
+
+border:2px solid greenyellow;
+
+padding:8px;
+
+margin:5px 0;
+
+text-decoration:none;
+
+display:block;
+
+text-align:center;
+
+}
+
+.button:hover{
+
+background:greenyellow;
+
+color:black;
+
+}
+
+/* TEXTO */
+
+.letras-titulo{
+
+font-size:2em;
+
+font-family:'Dancing Script', cursive;
+
+font-weight:700;
+
+font-style:italic;
+
+}
+
+/* LOGO */
+
+.logo{
+
+width:100px;
+
+height:100px;
+
+}
+
+.logo-img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+/* ICONES */
+
+.icons{
+
+width:40px;
+
+height:40px;
+
+border-radius:50%;
+
+margin:5px;
+
+}
+
+/* UTILIDADES */
+
+ul{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.centralizar-tudo{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.border{
+
+border:2px solid white;
+
+}
+
+.border-right{
+
+border-right:2px solid white;
+
+}
+
+.border-bottom{
+
+border-bottom:2px solid white;
+
+}
+
+/* ========================= */
+/* RESPONSIVIDADE TABLET */
+/* ========================= */
+
+@media(max-width:900px){
+
+.carrossel{
+
+grid-template-columns:1fr;
+
+grid-template-areas:
+
+"atual"
+"back"
+"prox";
+
+}
+
+.atual{
+
+max-width:100%;
+
+height:250px;
+
+}
+
+.back,
+.prox{
+
+max-width:100%;
+
+height:180px;
+
+}
+
+}
+
+/* ========================= */
+/* RESPONSIVIDADE CELULAR */
+/* ========================= */
+
+@media(max-width:768px){
+
+.bodyGen{
+
+grid-template-areas:
+
+"header"
+"main"
+"footer";
+
+grid-template-columns:1fr;
+
+}
+
+.menu-lateral{
+
+display:none;
+
+}
+
+.header{
+
+grid-template-columns:80px 1fr;
+
+}
+
+.letras-titulo{
+
+font-size:1.5em;
+
+}
+
+main{
+
+padding:10px;
+
+}
+
+.carrossel{
+
+gap:15px;
+
+}
+
+.eventos{
+
+padding:15px;
+
+}
+
+}
+
+/* ========================= */
+/* CELULAR PEQUENO */
+/* ========================= */
+
+@media(max-width:480px){
+
+.letras-titulo{
+
+font-size:1.2em;
+
+}
+
+.icons{
+
+width:30px;
+
+height:30px;
+
+}
+
+}
